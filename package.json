@@ -1,0 +1,23 @@
+{
+  "name": "markdown-it-link-preview",
+  "version": "1.0.0",
+  "description": "markdown-it plugin to create link preview",
+  "private": "false",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "tsc": "tsc --noEmit",
+    "test": "tsc --outDir dist && node test.js"
+  },
+  "dependencies": {
+    "jsdom": "^16.4.0",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.25",
+    "markdown-it": "^12.0.4",
+    "typescript": "^4.1.3"
+  }
+}
