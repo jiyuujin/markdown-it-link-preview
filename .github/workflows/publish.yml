@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Publish CI
 
 on:
   push:
@@ -20,14 +20,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
 
     - name: Cache node modules
-      uses: actions/cache@v1
+      uses: actions/cache@v2
       env:
-        cache-name: _cache_npm_node12
+        cache-name: _cache_npm_node14
       with:
         path: ~/.npm
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
@@ -42,3 +42,16 @@ jobs:
         npm run tsc --noEmit
       env:
         CI: true
+
+    - name: tsc --output-dir
+      run: |
+        npm run test
+      env:
+        CI: true
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.8.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: release
+        PUBLISH_DIR: ./dist
