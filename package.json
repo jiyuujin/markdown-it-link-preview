@@ -1,5 +1,5 @@
 {
-  "name": "markdown-it-link-preview",
+  "name": "@nekohack/markdown-it-link-preview",
   "version": "1.0.0",
   "description": "markdown-it plugin to create link preview",
   "main": "dist/index.js",
