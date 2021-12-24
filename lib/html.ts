@@ -5,8 +5,6 @@ export const fetchHtmlSync = (url) => {
 
     try {
         xhr.open('GET', url, false)
-        xhr.setRequestHeader( 'Cross-Origin-Embedder-Policy', 'require-corp' )
-        xhr.setRequestHeader( 'Cross-Origin-Opener-Policy', 'same-origin' )
         xhr.send()
     } catch (err) {
         throw new Error('Failed - ' + err)
