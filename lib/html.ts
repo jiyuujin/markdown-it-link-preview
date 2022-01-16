@@ -5,6 +5,7 @@ export const fetchHtmlSync = (url) => {
 
     try {
         xhr.open('GET', url, false)
+        xhr.withCredentials = true
         xhr.send()
     } catch (err) {
         throw new Error('Failed - ' + err)
