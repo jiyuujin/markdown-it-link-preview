@@ -36,16 +36,10 @@ jobs:
           ${{ runner.os }}-build-
           ${{ runner.os }}-
 
-    - name: tsc --noEmit
-      run: |
-        npm install
-        npm run tsc --noEmit
-      env:
-        CI: true
-
     - name: tsc --output-dir
       run: |
-        npm run test
+        npm install
+        npm run tsc
       env:
         CI: true
 
