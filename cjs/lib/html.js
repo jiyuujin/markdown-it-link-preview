@@ -10,7 +10,6 @@ var fetchHtmlSync = function (url, redirectLimit) {
     var xhr = new XMLHttpRequest();
     try {
         xhr.open('GET', url, false);
-        xhr.withCredentials = true;
         xhr.followRedirects = true;
         xhr.send();
     }
