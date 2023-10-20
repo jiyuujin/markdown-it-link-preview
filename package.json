@@ -1,6 +1,6 @@
 {
   "name": "@nekohack/markdown-it-link-preview",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "markdown-it plugin to create link preview",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
