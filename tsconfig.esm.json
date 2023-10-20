@@ -7,6 +7,7 @@
     "noImplicitAny": false,
     "esModuleInterop": true,
     "moduleResolution": "node",
+    "skipLibCheck": true,
     "lib": ["esnext", "esnext.asynciterable", "dom"],
     "types": [
       "node"
