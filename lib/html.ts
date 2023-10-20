@@ -9,7 +9,6 @@ export const fetchHtmlSync = (url, redirectLimit = 5) => {
 
     try {
         xhr.open('GET', url, false)
-        xhr.withCredentials = true
         xhr.followRedirects = true
         xhr.send()
     } catch (err) {
